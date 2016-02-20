@@ -1,6 +1,9 @@
 ### Java template
 *.class
 
+## Directory-based project format:
+.idea/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
