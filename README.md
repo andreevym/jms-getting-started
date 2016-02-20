@@ -1,4 +1,5 @@
-# jms-getting-started
+Title: jms-getting-started
+Description:
 This section describes the sending and receiving message. Getting started with the GlassFish application server.
 
 
@@ -8,22 +9,22 @@ https://glassfish.java.net/download.html
 2) Распаковал и запустил
 asadmin start-domain
 
-из-за баги в UI добавил очередь через консоль:
-http://stackoverflow.com/questions/33731097/cannot-create-any-jms-resource-through-glassfish-4-1-web-admin
+3) Из-за баги в UI glassfish добавилял ресурсы (фабрику соединений и очередь) через консоль:
 
-3) Зашел в панель управление через cmd
+3.1) Зашел в панель управление через cmd
 asadmin
 
-4) Добавил фабрику.
+3.2) Добавил фабрику.
 asadmin> create-jms-resource --host localhost --port 4848 --restype javax.jms.QueueConnectionFactory --property  Name=MyQCF jms/QCF1
 
+(http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Connection-Factory.gif)
 
-Встроенное изображение 1
-
-5) Добавил очередь.
+3.3) Добавил очередь.
 create-jms-resource --host localhost --port 4848 --restype javax.jms.Queue --property Name=PhysicalQueue jms/myQueue
 
-6) Доработал проект:
+[http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Destination-Resource.gif]
+
+4) Доработал проект:
 изменил зависимость, на:
 <dependency>
     <groupId>javax.jms</groupId>
@@ -32,11 +33,10 @@ create-jms-resource --host localhost --port 4848 --restype javax.jms.Queue --pro
     <scope>provided</scope>
 </dependency>
 
-7) Добавил war.
-Встроенное изображение 3
+5) Добавил war.
 
+[[http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application-Deployment.gif|alt=octocat]]
 
-8) Перешел по ссылки http://localhost:8080/send-message/TestServlet
+6) Перешел по ссылки http://localhost:8080/send-message/TestServlet
 
--- Воспользовался статьей:
-https://dzone.com/articles/jms-application-deployment
+[[http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application.gif]]
