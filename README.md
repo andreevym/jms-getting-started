@@ -17,12 +17,12 @@ asadmin
 3.2) Добавил фабрику.
 asadmin> create-jms-resource --host localhost --port 4848 --restype javax.jms.QueueConnectionFactory --property  Name=MyQCF jms/QCF1
 
-(http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Connection-Factory.gif)
+![JMS-Connection-Factory](http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Connection-Factory.gif)
 
 3.3) Добавил очередь.
 create-jms-resource --host localhost --port 4848 --restype javax.jms.Queue --property Name=PhysicalQueue jms/myQueue
 
-[http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Destination-Resource.gif]
+![JMS-Destination-Resource](http://i2.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Destination-Resource.gif)
 
 4) Доработал проект:
 изменил зависимость, на:
@@ -35,8 +35,8 @@ create-jms-resource --host localhost --port 4848 --restype javax.jms.Queue --pro
 
 5) Добавил war.
 
-[[http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application-Deployment.gif|alt=octocat]]
+![JMS-Application-Deployment](http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application-Deployment.gif)
 
 6) Перешел по ссылки http://localhost:8080/send-message/TestServlet
 
-[[http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application.gif]]
+![JMS-Application](http://i0.wp.com/blog.jelastic.com/wp-content/uploads/2013/08/JMS-Application.gif)
